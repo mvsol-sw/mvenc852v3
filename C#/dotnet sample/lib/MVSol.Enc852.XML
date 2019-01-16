@@ -1,0 +1,425 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MVSol.Enc852</name>
+    </assembly>
+    <members>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetTriggerControl(System.Int32)">
+            <summary>
+            Address 0x0000
+            TriggerControl data를 가져옵니다.
+            </summary>
+            <param name="ch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetTriggerControl(System.Int32,System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ch"></param>
+            <param name="control"></param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetTriggerGenerator(System.Int32)">
+            <summary>
+            Address 0x0001
+            GenHighCycle 신호를 가져옵니다.
+            D[31:16] : Cycle
+            D[15:00] : P_High
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetTriggerGenerator(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Address 0x0001
+            GenHighCycle 신호를 입력합니다.
+            D[31:16] : Cycle
+            D[15:00] : P_High
+            </summary>
+            <param name="ch"></param>
+            <param name="pulseHigh"></param>
+            <param name="cycle"></param>
+        </member>
+        <!-- "M:MVSol.Enc852.MVEnc852v3Comm.GetTriggerPositionStart(System.Int32)" 멤버에 대해 잘못된 형식의 XML 주석은 무시됩니다. -->
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetTriggerPositionStart(System.Int32,System.Int32)">
+            <summary>
+            Start Position 값을 입력합니다.
+            0 ~ 4,294,967,295
+            </summary>
+            <param name="ch">채널(0~3)</param>
+            <param name="count">시작 카운트값</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetTriggerPositionStart(System.Int32,System.Int32,System.Double,System.Int32)">
+            <summary>
+            트리거 출력 구간의 시작위치를 설정합니다.
+            </summary>
+            <param name="ch">채널(0~3)</param>
+            <param name="position">위치(㎛)</param>
+            <param name="resolution">엔코더 분해능(㎛)</param>
+            <param name="multi">채배율(1|2|4)</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetTriggerPositionEnd(System.Int32)">
+            <summary>
+            Address 0x0003
+            End Position 값을 가져옵니다.
+            0 ~ 4,294,967,295
+            </summary>
+            <param name="ch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetTriggerPositionEnd(System.Int32,System.Int32)">
+            <summary>
+            End Position 값을 입력합니다.
+            0 ~ 4,294,967,295
+            </summary>
+            <param name="ch">채널(0~3)</param>
+            <param name="count">카운트값</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetTriggerPositionEnd(System.Int32,System.Int32,System.Double,System.Int32)">
+            <summary>
+            트리거 출력 구간의 종료위치를 설정합니다.
+            </summary>
+            <param name="ch">채널(0~3)</param>
+            <param name="position">위치값(㎛)</param>
+            <param name="resolution">엔코더 분해능(㎛)</param>
+            <param name="multi">채배율(1|2|4)</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetEncoderMultiForAnalog(System.Int32)">
+            <summary>
+            아날로그 엔코더 채배율을 가져옵니다.
+            8~1023
+            </summary>
+            <param name="ch">채널(0~3)</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetEncoderMultiForAnalog(System.Int32,System.Int32)">
+            <summary>
+            아날로그 엔코더 채배율을 설정합니다. 
+            </summary>
+            <param name="ch">채널(0~3)</param>
+            <param name="multi">8~1023</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetStartStopCalibration(System.Int32,System.Int32)">
+            <summary>
+            Calibration값을 설정합니다.
+            </summary>
+            <param name="ch">채널(0~3)</param>
+            <param name="value">0 = Stop , 1 = Start</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetEncoderAnalogDirection(System.Int32)">
+            <summary>
+            Encoder 설정 방향을 가져옵니다.
+            </summary>
+            <param name="ch">채널(0~3)</param>
+            '1' : REVERSE, '0' : NORMAL
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetEncoderAnalogDirection(System.Int32,System.Int32)">
+            <summary>
+            Encoder 설정 방향을 설정합니다.
+            </summary>
+            <param name="ch">채널(0~3)</param>
+            <param name="Direction">'1' : REVERSE, '0' : NORMAL</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetEncoderResolution">
+            <summary>
+            address 0xF006
+            Encoder Resolution 디바이스의 값을 가져옵니다.
+            unit : 0.001um
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetEncoderResolution(System.Double)">
+            <summary>
+            address 0xF006
+            Encoder Resolution 디바이스의 값을 입력합니다.
+            unit : 0.001um
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetVirtualEncoder(System.Int32)">
+            <summary>
+            address 0x0400~3
+            Virtual Encoder를 출력합니다.
+            Frequency(0 ~ 10,000,000Hz)
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetVirtualEncoder(System.Int32,System.UInt32)">
+            <summary>
+            address 0x0400~3
+            Virtual Encoder를 입력합니다.
+            Frequency(0 ~ 10,000,000Hz)
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetDigitalInputState">
+            <summary>
+            Digital Input 상태를 가져옵니다.
+            </summary>
+            <returns>DI상태값</returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetDigitalInputState(System.Int32[]@)">
+            <summary>
+            Digital Input 상태를 가져옵니다.
+            </summary>
+            <param name="di">DI상태 배열</param>
+            <returns>DI상태값</returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetDigitalInputState(System.Int32)">
+            <summary>
+            Digital Input 상태를 가져옵니다.
+            </summary>
+            <param name="id">채널(0~6)</param>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetDigitalInputCount(System.Int32)">
+            <summary>
+            Digital Input count를 가져옵니다.
+            0 ~ 4,294,967,295
+            </summary>
+            <param name="ch">0 ~ 6</param>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetTriggerCount(System.Int32)">
+            <summary>
+            Trigger count를 가져옵니다.
+            0 ~ 4,294,967,295
+            </summary>
+            <param name="ch">0~3</param>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetEncoderPosition(System.Int32)">
+            <summary>
+            Encoder Position를 가져옵니다.
+            -2,147,483,648 ~ 2,147,483,647
+            </summary>
+            <param name="ch">0~3</param>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetErrorCount(System.Int32)">
+            <summary>
+            Error Count를 가져옵니다.
+            0 ~ 4,294,967,295
+            </summary>
+            <param name="ch">0~3</param>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetLogicVersion">
+            <summary>
+            Logic Version 디바이스의 값을 가져옵니다.
+            </summary>
+            <returns>로직 버전</returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetFirmVersion">
+            <summary>
+            Firmware Version 디바이스의 값을 가져옵니다.
+            </summary>
+            <returns>펌웨어 버전</returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetDefaultParameter">
+            <summary>
+            디바이스를 초기화합니다.
+            </summary>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SaveFlash">
+            <summary>
+            디바이스 설정 값을 Flash Memory에 저장합니다.
+            </summary>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.LoadFlash">
+            <summary>
+            Flash Memory에 저장된 값을 불러옵니다.
+            </summary>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetClear(System.UInt32)">
+            <summary>
+            DI Count, Trigger Count, Encoder Position, Error Count를 초기화 합니다.
+            D[0] : DI0_Cnt_Clear ~ D[6] : DI6_Cnt_Clear
+            D[7] : TRG0_Cnt_Clear ~D[10] : TRG3_Cnt_clear
+            D[11] : Enc0_Pos_Clear ~D[14] : Enc3_Pos_clear
+            D[15] : Error0_Cnt_Clear ~D[18] : Error3_Cnt_Clear
+            </summary>
+            <param name="data">초기화할 bit데이터</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.ClearDigitalInputCountAll">
+            <summary>
+            Digital Input Count 채널0~채널6 모두 초기화합니다.
+            </summary>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.ClearTriggerCountAll">
+            <summary>
+            Trigger Count 채널0~채널3 모두 초기화합니다.
+            </summary>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.ClearEncoderPositionAll">
+            <summary>
+            엔코더 위치값 채널0~채널3 모두 초기화합니다.
+            </summary>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.ClearErrorCountAll">
+            <summary>
+            Error Count 채널0~채널3 모두 초기화합니다.
+            </summary>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.ClearDigitalInputCount(System.Int32)">
+            <summary>
+            해당 채널의 Digital Input Count를 초기화합니다.
+            </summary>
+            <param name="ch">초기화할 채널(0~6)</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.ClearTriggerCount(System.Int32)">
+            <summary>
+            해당 채널의 Trigger Count를 초기화합니다.
+            </summary>
+            <param name="ch">초기화할 채널(0~3)</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.ClearEncoderPosition(System.Int32)">
+            <summary>
+            해당 채널의 엔코더 위치를 초기화합니다.
+            </summary>
+            <param name="ch">초기화할 채널(0~3)</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.ClearErrorCount(System.Int32)">
+            <summary>
+            해당 채널의 Error Count를 초기화합니다.
+            </summary>
+            <param name="ch">초기화할 채널(0~3)</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.GetUnit">
+            <summary>
+            address 0xF007
+            unit 디바이스의 값을 가져옵니다.
+            0 : Count, 1 : um
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SetUnit(System.UInt32)">
+            <summary>
+            address 0xF007
+            unit값을 디바이스에 입력합니다.
+             0 : Count, 1 : um
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.SaveToFile(System.String)">
+            <summary>
+            디바이스의 데이터를 파일로 저장합니다.
+            </summary>
+            <param name="filename">저장할 파일경로</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.LoadFromFile(System.String)">
+            <summary>
+            파일 데이터를 디바이스에 전송합니다.
+            </summary>
+            <param name="filename">불러올 파일경로</param>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.ToPosition(System.Int32,System.Double,System.Int32)">
+            <summary>
+            카운트값을 위치값으로 변환한다.
+            </summary>
+            <param name="count">엔코더 카운트</param>
+            <param name="resolution">엔코더 분해능(㎛)</param>
+            <param name="multi">채배율</param>
+            <returns>위치값(㎛)</returns>
+        </member>
+        <member name="M:MVSol.Enc852.MVEnc852v3Comm.ToCount(System.Int32,System.Double,System.Int32)">
+            <summary>
+            위치값을 카운트값으로 변환한다.
+            </summary>
+            <param name="position">위치값(㎛)</param>
+            <param name="resolution">엔코더 분해능(㎛)</param>
+            <param name="multi">채배율(1|2|4)</param>
+            <returns>카운트값</returns>
+        </member>
+        <member name="T:MVSol.Enc852.EncoderTypeConstants">
+            <summary>
+            엔코더 입력 신호
+            </summary>
+        </member>
+        <member name="T:MVSol.Enc852.ConditionFactorConstants">
+            <summary>
+            트리거 출력시 연산되는 피연산자
+            </summary>
+        </member>
+        <member name="T:MVSol.Enc852.TriggerOutOperatorConstants">
+            <summary>
+            트리거 출력시 연산되는 연산자
+            </summary>
+        </member>
+        <member name="T:MVSol.Enc852.EncoderDirectionFactorConstants">
+            <summary>
+            엔코더 방향 정보를 담고 있는 입력
+            </summary>
+        </member>
+        <member name="T:MVSol.Enc852.TriggerDirectionalityConstants">
+            <summary>
+            트리거 윈도우기능 방향성
+            </summary>
+        </member>
+        <member name="T:MVSol.Enc852.TriggerBaseConstants">
+            <summary>
+            트리거 출력에 사용되는 데이터
+            </summary>
+        </member>
+        <member name="P:MVSol.Enc852.TriggerControl.Data">
+            <summary>
+            TriggerControl 4byte 데이터
+            </summary>
+        </member>
+        <member name="P:MVSol.Enc852.TriggerControl.EncoderType">
+            <summary>
+            Address 0x0000
+            입력 엔코더 타입을 설정합니다.
+            </summary>
+        </member>
+        <member name="P:MVSol.Enc852.TriggerControl.EncoderChannel">
+            <summary>
+            Address: 0x0000
+            입력 엔코더 채널을 선택합니다.
+            </summary>
+        </member>
+        <member name="P:MVSol.Enc852.TriggerControl.Multi">
+            <summary>
+            Address: 0x0000
+            엔코더 체배를 입력합니다.
+            </summary>
+        </member>
+        <member name="P:MVSol.Enc852.TriggerControl.ConditionFactor">
+            <summary>
+            Address: 0x0000
+            인자 개수를 입력합니다.
+            </summary>
+        </member>
+        <member name="P:MVSol.Enc852.TriggerControl.TriggerOut">
+            <summary>
+            Address: 0x0000
+            트리거 출력을 입력합니다.
+            </summary>
+        </member>
+        <member name="P:MVSol.Enc852.TriggerControl.EncoderDirectionFactor">
+            <summary>
+            Address: 0x0000
+            엔코더 방향 개수를 입력합니다.
+            </summary>
+        </member>
+        <member name="P:MVSol.Enc852.TriggerControl.TriggerDirectionality">
+            <summary>
+            Address: 0x0000
+            트리거 방향 위치를 입력합니다.
+            </summary>
+        </member>
+        <member name="P:MVSol.Enc852.TriggerControl.EncoderCorrection">
+            <summary>
+            Address: 0x0000
+            엔코더 보정값을 입력합니다.
+            </summary>
+        </member>
+        <member name="P:MVSol.Enc852.TriggerControl.TriggerBase">
+            <summary>
+            Address: 0x0000
+            기본 트리거 값을 입력합니다.
+            </summary>
+        </member>
+    </members>
+</doc>
